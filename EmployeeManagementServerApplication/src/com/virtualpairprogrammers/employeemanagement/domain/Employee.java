@@ -1,6 +1,8 @@
 package com.virtualpairprogrammers.employeemanagement.domain;
 
-public class Employee {
+import java.io.Serializable;
+
+public class Employee implements Serializable {
 	
 	private String firstName;
 	private String surname;

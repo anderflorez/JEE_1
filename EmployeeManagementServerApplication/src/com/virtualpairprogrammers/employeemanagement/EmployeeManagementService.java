@@ -2,8 +2,11 @@ package com.virtualpairprogrammers.employeemanagement;
 
 import java.util.List;
 
+import javax.ejb.Remote;
+
 import com.virtualpairprogrammers.employeemanagement.domain.Employee;
 
+@Remote
 public interface EmployeeManagementService {
 	
 	public void registerEmployee(Employee employee);

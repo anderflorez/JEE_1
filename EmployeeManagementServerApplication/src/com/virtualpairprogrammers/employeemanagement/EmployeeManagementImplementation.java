@@ -3,8 +3,11 @@ package com.virtualpairprogrammers.employeemanagement;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.ejb.Stateless;
+
 import com.virtualpairprogrammers.employeemanagement.domain.Employee;
 
+@Stateless
 public class EmployeeManagementImplementation implements EmployeeManagementService {
 
 	@Override
