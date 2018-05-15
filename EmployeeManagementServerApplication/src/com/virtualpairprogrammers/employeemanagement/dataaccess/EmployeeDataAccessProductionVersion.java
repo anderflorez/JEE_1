@@ -4,28 +4,31 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.ejb.Stateless;
+import javax.enterprise.inject.Default;
 
 import com.virtualpairprogrammers.employeemanagement.domain.Employee;
 
 @Stateless
-public class EmployeeDataAccessImplementation implements EmployeeDataAccess {
+@Default
+@ProductionDao
+public class EmployeeDataAccessProductionVersion implements EmployeeDataAccess {
 
 	@Override
 	public void insert(Employee newEmployee) {
 		
-
+		
 	}
 
 	@Override
 	public List<Employee> findAll() {
 		
-		Employee e1 = new Employee("James", "Green", "Writer", 1700);
-		Employee e2 = new Employee("Sharon", "White", "Editor", 2100);
-		Employee e3 = new Employee("Darren", "Blue", "Manager", 31250);
+		Employee e1 = new Employee("Kelly", "Blue", "Author", 1900);
+		Employee e2 = new Employee("David", "Brown", "Cleaner", 1600);
+		
 		List<Employee> employees = new ArrayList<>();
 		employees.add(e1);
 		employees.add(e2);
-		employees.add(e3);
+		
 		return employees;
 	}
 

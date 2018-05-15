@@ -6,6 +6,7 @@ import javax.ejb.Stateless;
 import javax.inject.Inject;
 
 import com.virtualpairprogrammers.employeemanagement.dataaccess.EmployeeDataAccess;
+import com.virtualpairprogrammers.employeemanagement.dataaccess.TestingDao;
 import com.virtualpairprogrammers.employeemanagement.domain.Employee;
 
 @Stateless
