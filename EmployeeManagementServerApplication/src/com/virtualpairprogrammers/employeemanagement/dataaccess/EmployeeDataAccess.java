@@ -11,6 +11,6 @@ public interface EmployeeDataAccess {
 	
 	public void insert(Employee newEmployee);
 	public List<Employee> findAll();
-	public List<Employee> findBySurename(String surename);
+	public List<Employee> findBySurname(String surename);
 
 }

@@ -29,7 +29,7 @@ public class EmployeeManagementImplementation implements EmployeeManagementServi
 	@Override
 	public List<Employee> searchBySurname(String surename) {
 		
-		return dao.findBySurename(surename);
+		return dao.findBySurname(surename);
 	}
 
 }

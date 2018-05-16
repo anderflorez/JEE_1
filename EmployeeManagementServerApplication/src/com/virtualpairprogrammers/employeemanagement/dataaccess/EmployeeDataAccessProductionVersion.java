@@ -1,6 +1,5 @@
 package com.virtualpairprogrammers.employeemanagement.dataaccess;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.ejb.Stateless;
@@ -25,21 +24,24 @@ public class EmployeeDataAccessProductionVersion implements EmployeeDataAccess {
 	@Override
 	public void insert(Employee newEmployee) {
 		
-		
+		em.persist(newEmployee);
 	}
 
 	@Override
 	public List<Employee> findAll() {
 		
 		Query q = em.createQuery("select employee from Employee employee");
-		List<Employee> employees = q.getResultList();		
+		List<Employee> employees = q.getResultList();
 		return employees;
 	}
 
 	@Override
-	public List<Employee> findBySurename(String surename) {
+	public List<Employee> findBySurname(String surname) {
 		
-		return null;
+		Query q = em.createQuery("select employee from Employee employee where employee.surname = :surname");
+		q.setParameter("surname", surname);
+		List<Employee> employees = q.getResultList();
+		return employees;
 	}
 
 }

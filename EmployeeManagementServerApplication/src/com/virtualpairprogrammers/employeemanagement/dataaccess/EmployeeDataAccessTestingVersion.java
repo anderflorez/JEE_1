@@ -31,7 +31,7 @@ public class EmployeeDataAccessTestingVersion implements EmployeeDataAccess {
 	}
 
 	@Override
-	public List<Employee> findBySurename(String surename) {
+	public List<Employee> findBySurname(String surename) {
 		
 		return null;
 	}

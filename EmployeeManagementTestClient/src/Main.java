@@ -14,6 +14,7 @@ public class Main {
 		
 		Properties jndiProperties = new Properties();
 		jndiProperties.put(Context.INITIAL_CONTEXT_FACTORY, "org.jboss.naming.remote.client.InitialContextFactory");
+//		jndiProperties.put(Context.INITIAL_CONTEXT_FACTORY, "org.wildfly.naming.client.WildFlyInitialContextFactory");
 		jndiProperties.put(Context.PROVIDER_URL, "http-remoting://localhost:8080");
 		jndiProperties.put("jboss.naming.client.ejb.context",  true);
 		
@@ -21,7 +22,22 @@ public class Main {
 		
 		EmployeeManagementService service = (EmployeeManagementService) jndi.lookup("EmployeeManagementServerApplication/EmployeeManagementImplementation!com.virtualpairprogrammers.employeemanagement.EmployeeManagementService");
 		
-		List<Employee> employees = service.getAllEmployees();
+		Employee emp1 = new Employee("Sophie", "Green", "Artist", 1700);
+		Employee emp2 = new Employee("David", "Bule", "Dancer", 1800);
+		Employee emp3 = new Employee("Ronald", "Smith", "Conductor", 1900);
+		Employee emp4 = new Employee("Eric", "Jones", "Pianist", 2000);
+		
+//		service.registerEmployee(emp1);
+//		service.registerEmployee(emp2);
+//		service.registerEmployee(emp3);
+//		service.registerEmployee(emp4);
+		
+		List<Employee> employees1 = service.getAllEmployees();
+		for (Employee employee : employees1) {
+			System.out.println(employee);
+		}
+		
+		List<Employee> employees = service.searchBySurname("Smith");
 		for (Employee employee : employees) {
 			System.out.println(employee);
 		}
